@@ -11,14 +11,14 @@ function App() {
   const [] = useState();
 
   return (
-    <>
+    <div className="window-div">
       <Navbar />
       {/* <Signin /> */}
       {/* <Register /> */}
       <ClassSelection />
       {/* <BattleScene /> */}
       {/* <EndScene /> */}
-    </>
+    </div>
   );
 }
 
