@@ -15,8 +15,8 @@ function App() {
       <Navbar />
       {/* <Signin /> */}
       {/* <Register /> */}
-      <ClassSelection />
-      {/* <BattleScene /> */}
+      {/* <ClassSelection /> */}
+      <BattleScene />
       {/* <EndScene /> */}
     </div>
   );
