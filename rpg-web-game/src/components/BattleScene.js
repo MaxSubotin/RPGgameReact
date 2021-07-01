@@ -1,11 +1,19 @@
 import React from "react";
 import "../index.css";
 
-function BattleScene() {
+function BattleScene({
+  setScreenState,
+  currentClass,
+  currentEnemy,
+  generateEnemy,
+  getRandomInt,
+}) {
+  getRandomInt();
+  generateEnemy();
   return (
     <div className="battle-container">
       <div className="player-battle-box">
-        <div className="class warrior still">
+        <div className={`class ${currentClass} still`}>
           <ul className="class-ul">
             <li className="class-li">STR: 12</li>
             <li className="class-li">INT: 8</li>
@@ -25,8 +33,11 @@ function BattleScene() {
         <h1 className="console-box-title">FIGHT!</h1>
       </div>
 
-      <div className="enemy-battle-box">
-        <div className="class mage still">
+      <div
+        className="enemy-battle-box"
+        onClick={() => setScreenState("EndScene")}
+      >
+        <div className={`class ${currentEnemy} still`}>
           <ul className="class-ul classEnemy">
             <li className="class-li">STR: 12</li>
             <li className="class-li">INT: 8</li>
