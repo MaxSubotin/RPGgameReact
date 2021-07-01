@@ -16,7 +16,7 @@ function App() {
       {/* <Signin /> */}
       {/* <Register /> */}
       {/* <ClassSelection /> */}
-      <BattleScene />
+      {/* <BattleScene /> */}
       {/* <EndScene /> */}
     </div>
   );

@@ -30,6 +30,18 @@ body {
   }
 }
 
+@keyframes uiBoxAppers {
+  0% {
+    opacity: 0;
+  }
+  65% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 /* ----------------------------------------------------------------------------------------------- */
 
 /* ######################################## Main Window Div ############################################# */
@@ -38,6 +50,23 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: burlywood;
+}
+
+/* ------------------------------------------------------------------------------------------------------ */
+
+/* ######################################## Navigation Bar ############################################# */
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-bottom: 3px solid black;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.navbar-item {
+  padding: 0 30px;
+  cursor: context-menu;
 }
 
 /* ------------------------------------------------------------------------------------------------------ */
@@ -93,6 +122,7 @@ body {
   cursor: pointer;
   font-size: 18px;
   animation: 1.5s ease-out 0s 1 slideInFromBottom;
+  z-index: 2;
 }
 
 .class:hover {
@@ -135,25 +165,14 @@ body {
 }
 
 .class-ul {
+  grid-column-start: 1;
   list-style-type: none;
   justify-self: center;
   padding-bottom: 25px;
 }
 
-/* ------------------------------------------------------------------------------------------------------ */
-
-/* ######################################## Navigation Bar ############################################# */
-
-.navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  border-bottom: 3px solid black;
-  background-color: rgba(255, 255, 255, 0.6);
-}
-
-.navbar-item {
-  padding: 0 30px;
+.class-li {
+  cursor: context-menu;
 }
 
 /* ------------------------------------------------------------------------------------------------------ */
@@ -166,18 +185,140 @@ body {
   height: 700px;
   margin: 5rem auto;
   padding: 15px 5px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  gap: 15px;
 }
 
-.end-container {
-  border: 5px solid black;
-  width: 500px;
-  height: 400px;
-  margin: 5rem auto;
-  padding: 15px 5px;
+.player-battle-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.ui-box {
+  border: 2px solid black;
+  padding: 5px;
+  margin-top: 10px;
+  width: 96%;
+  height: 100%;
+  animation: 1.5s ease-out 0s 1 uiBoxAppers;
+}
+
+.ui-box-ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 98%;
+  padding-left: 10px;
+}
+
+.ui-box-ul > li {
+  border: 1px solid red;
+  width: 100%;
+  cursor: context-menu;
+}
+
+.enemy-battle-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.still {
+  font-weight: bold;
+  cursor: auto;
+}
+
+.still:hover {
+  transition: none;
+  transform: none;
+  font-weight: bold;
+  box-shadow: inset 0 -185px 60px 10px rgb(55, 55, 55);
+  padding-bottom: 5px;
+}
+
+.classEnemy {
+  grid-column-start: 3;
+}
+
+/* ------------------------------------------------------------------------------------------------------ */
+
+/* ######################################## Console Box  ################################################ */
+
+.console-box {
+  grid-column: 2 / 4;
+  border: 4px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  line-height: 30px;
+  cursor: context-menu;
+}
+
+.console-box-title {
+  font-size: 80px;
+  font-weight: lighter;
+  font-family: Impact, "Arial Narrow Bold", sans-serif;
 }
 
 /* ------------------------------------------------------------------------------------------------------ */
 
 /* ######################################## End Game Screen ############################################# */
+
+.end-container {
+  border: 5px solid black;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  font-size: 3rem;
+  width: 500px;
+  height: 400px;
+  margin: 5rem auto;
+  padding: 20px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.end-p {
+  margin-bottom: 30px;
+}
+
+.end-btn-div {
+  display: flex;
+  flex-direction: row;
+}
+
+.end-btn {
+  margin: 10px;
+  width: 180px;
+  height: 55px;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+}
+
+.end-btn:hover {
+  transform: scale(1.1);
+  transition: 0.3s ease-in-out;
+}
+
+.end-btn:active {
+  transform: scale(0.95);
+  transition: 0.05s ease-in-out;
+}
 
 /* ------------------------------------------------------------------------------------------------------ */

@@ -1,14 +1,16 @@
-import React from 'react';
-import '../index.css';
+import React from "react";
+import "../index.css";
 
 function BattleScene() {
   return (
     <div className="end-container">
-      <p>You Win!</p>
-      <button>next battle</button>
-      <button>class selection</button>
+      <p className="end-p">You Win!</p>
+      <div className="end-btn-div">
+        <button className="end-btn">next battle</button>
+        <button className="end-btn">class selection</button>
+      </div>
     </div>
-  )
+  );
 }
 
-export default BattleScene
+export default BattleScene;
